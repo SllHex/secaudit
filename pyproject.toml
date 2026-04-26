@@ -11,6 +11,25 @@ license = "MIT"
 authors = [
   { name = "SllHex", email = "dana.rahimi007@gmail.com" }
 ]
+
+keywords = [
+  "security",
+  "security-audit",
+  "web-security",
+  "cli",
+  "devsecops",
+  "tls",
+  "dns",
+  "csp",
+  "security-headers"
+]
+
+[project.urls]
+Homepage = "https://github.com/SllHex/secaudit"
+Repository = "https://github.com/SllHex/secaudit"
+Issues = "https://github.com/SllHex/secaudit/issues"
+Changelog = "https://github.com/SllHex/secaudit/blob/main/CHANGELOG.md"
+
 classifiers = [
   "Development Status :: 4 - Beta",
   "Environment :: Console",
