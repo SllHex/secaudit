@@ -56,37 +56,17 @@ These are **known limitations**, not bugs. SecAudit is designed to be accurate f
 
 ## // SCREENSHOTS
 
-> **Add screenshots here** — capture your terminal after running SecAudit and drop the images in `docs/screenshots/`. See [`docs/screenshots/README.md`](docs/screenshots/README.md) for guidance.
+### Audit Complete — Score, Grade, Top Issues
 
-### Banner + Scan Start
-
-![SecAudit Banner](docs/screenshots/banner.png)
-
-> *Replace with actual screenshot: `secaudit scan https://yoursite.com --banner-variant matrix`*
+![SecAudit Complete](docs/screenshots/complete.png)
 
 ### Live Scan Progress
 
 ![SecAudit Progress](docs/screenshots/progress.png)
 
-> *Replace with actual screenshot: scan in progress, mid-run progress table visible*
-
-### Audit Complete — Score, Grade, Top Issues
-
-![SecAudit Complete](docs/screenshots/complete.png)
-
-> *Replace with actual screenshot: `[ AUDIT COMPLETE ]` panel showing score, grade, top issues table, module summary*
-
 ### Interactive Control Deck
 
 ![SecAudit Interactive](docs/screenshots/interactive.png)
-
-> *Replace with actual screenshot: `secaudit interactive` — Control Deck splash + menu*
-
-### Diff Mode
-
-![SecAudit Diff](docs/screenshots/diff.png)
-
-> *Replace with actual screenshot: `secaudit compare baseline.json current.json`*
 
 ---
 
