@@ -75,7 +75,7 @@ These are **known limitations**, not bugs. SecAudit is designed to be accurate f
 **From source (recommended):**
 
 ```bash
-git clone https://github.com/your-org/secaudit.git
+git clone https://github.com/SllHex/secaudit.git
 cd secaudit
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
