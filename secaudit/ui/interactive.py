@@ -15,31 +15,23 @@ from .. import __version__
 from ..config import ScanSettings
 from ..profiles import ProfileSpec
 from ..registry import ModuleSpec
-
-# Compact brand mark for interactive splash (different from main banner logo)
-_BRAND = (
-    "  ╔══════════════════════════════════════════════╗\n"
-    "  ║                                              ║\n"
-    "  ║    ░░  S E C // A U D I T  ░░               ║\n"
-    "  ║    CONTROL DECK  ─────────────  v{ver}   ║\n"
-    "  ║                                              ║\n"
-    "  ╚══════════════════════════════════════════════╝"
-)
+from .banner import _LOGO
 
 
 def render_interactive_splash() -> RenderableType:
     """Render the interactive-mode splash."""
 
-    ver_field = f"{__version__:<10}"
-    brand = Text(_BRAND.format(ver=ver_field), style="bold bright_green")
-    status = Group(
-        Text("  [+] operator console online", style="bright_green"),
-        Text("  [+] surface audit engine loaded", style="bright_green"),
-        Text("  [+] zero-exploit · non-destructive · safe", style="green"),
-        Text("  [*] select an operation from the deck below", style="dim green"),
+    logo = Text(_LOGO, style="bold bright_green")
+    sep  = Rule(style="dark_green")
+    meta = Group(
+        Text(f"  version  //  v{__version__}", style="bright_green"),
+        Text( "  mode     //  interactive · control deck", style="green"),
+        Text( "  [+] operator console online", style="bright_green"),
+        Text( "  [+] zero-exploit · non-destructive · safe", style="green"),
+        Text( "  [*] select an operation from the deck below", style="dim green"),
     )
     return Panel(
-        Group(brand, Text(""), status),
+        Group(logo, Text(""), sep, Text(""), meta),
         box=HEAVY,
         border_style="bright_green",
         padding=(0, 1),

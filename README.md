@@ -26,6 +26,34 @@ Zero exploits. Zero brute-force. Pure posture review — TLS, headers, CSP, cook
 
 ---
 
+## // WHO IS THIS FOR
+
+SecAudit is built for **standard web applications** — the kind that most businesses, startups, and developers actually run:
+
+| Target type | Result accuracy |
+|-------------|----------------|
+| Company/startup websites | ✅ Accurate — this is the sweet spot |
+| WordPress / Django / Laravel / PHP apps | ✅ Accurate |
+| SaaS portals, dashboards, admin panels | ✅ Accurate |
+| E-commerce stores | ✅ Accurate |
+| Personal/portfolio sites | ✅ Accurate |
+| APIs you build yourself | ✅ Accurate |
+| GitHub, Google, Cloudflare, Vercel… | ⚠️ Expect false positives (see below) |
+
+### Why big platforms score low (false positives)
+
+Platforms like GitHub or Google are built on architectures that intentionally break conventional security rules:
+
+- **Token-based APIs** — CSRF doesn't apply when there's no session cookie. SecAudit's CSRF checks assume session-based auth, which is correct for 95% of web apps.
+- **Public CORS** — GitHub's API allows cross-origin requests *on purpose* because it's a public API. That's by design, not a vulnerability.
+- **Complex CSP** — GitHub's Content Security Policy has hundreds of directives. SecAudit's parser is calibrated for typical CSP headers, not enterprise-scale policies.
+
+These are **known limitations**, not bugs. SecAudit is designed to be accurate for the targets you'll actually audit — your own site or a client's.
+
+> **Rule of thumb:** If you're a developer auditing a site you built or manage, SecAudit will give you reliable, actionable results. If you scan GitHub.com to test the tool, the results won't be meaningful.
+
+---
+
 ## // SCREENSHOTS
 
 > **Add screenshots here** — capture your terminal after running SecAudit and drop the images in `docs/screenshots/`. See [`docs/screenshots/README.md`](docs/screenshots/README.md) for guidance.
@@ -472,6 +500,7 @@ Only run it against systems you own or are **explicitly authorized** to assess.
 
 ## // ROADMAP
 
+- [ ] **Smarter false-positive reduction** — context-aware CSRF/CORS checks for token-based APIs, confidence scores per finding
 - [ ] SARIF output for GitHub Code Scanning integration
 - [ ] Baseline / ignore files for CI regression suppression
 - [ ] Per-finding remediation guidance with CVE / reference links
