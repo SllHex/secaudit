@@ -162,12 +162,12 @@ AuditReport  →  score / grade / top issues
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ┏━ [ AUDIT COMPLETE ] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃   target   //  example.com                                        ┃
-┃   profile  //  standard                                           ┃
-┃   score    //  74 / 100  grade  C+                                ┃
+┃   target   //  example.com                                       ┃
+┃   profile  //  standard                                          ┃
+┃   score    //  74 / 100  grade  C+                               ┃
 ┃   checks   //  [+] 38 pass  [!] 3 high  [-] 5 med  [*] 2 info    ┃
-┃   time     //  2.14s                                              ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┃   time     //  2.14s                                             ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
   // TOP ISSUES
 ┏━━━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -188,20 +188,20 @@ secaudit interactive
 ```
 
 ```
-┏━ [ SEC//AUDIT ] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃ ███████╗███████╗ ██████╗ █████╗ ██╗   ██╗██████╗ ██╗████████╗    ┃
-┃ ██╔════╝██╔════╝██╔════╝██╔══██╗██║   ██║██╔══██╗██║╚══██╔══╝    ┃
+┏━ [ SEC//AUDIT ] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ ███████╗███████╗ ██████╗ █████╗ ██╗   ██╗██████╗ ██╗████████╗     ┃
+┃ ██╔════╝██╔════╝██╔════╝██╔══██╗██║   ██║██╔══██╗██║╚══██╔══╝     ┃
 ┃ ███████╗█████╗  ██║     ███████║██║   ██║██║  ██║██║   ██║        ┃
 ┃ ╚════██║██╔══╝  ██║     ██╔══██║██║   ██║██║  ██║██║   ██║        ┃
 ┃ ███████║███████╗╚██████╗██║  ██║╚██████╔╝██████╔╝██║   ██║        ┃
 ┃ ╚══════╝╚══════╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝╚═╝   ╚═╝         ┃
-┃                                                                    ┃
-┃   version  //  v1.1.0                                              ┃
-┃   mode     //  interactive · control deck                          ┃
-┃   [+] operator console online                                      ┃
-┃   [+] zero-exploit · non-destructive · safe                        ┃
-┃   [*] select an operation from the deck below                      ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ [ CONTROL DECK ] ━┛
+┃                                                                   ┃
+┃   version  //  v1.1.0                                             ┃
+┃   mode     //  interactive · control deck                         ┃
+┃   [+] operator console online                                     ┃
+┃   [+] zero-exploit · non-destructive · safe                       ┃
+┃   [*] select an operation from the deck below                     ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ [ CONTROL DECK ] ━┛
 
   SCAN OPERATIONS
 ┏━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -250,7 +250,7 @@ secaudit explain csp
 | `headers`     | Web App      | HSTS, X-Frame-Options, CSP presence, Referrer-Policy  |
 | `csp`         | Web App      | Policy quality, `unsafe-inline`, script-src strictness|
 | `cookies`     | Web App      | Secure, HttpOnly, SameSite, `__Host-` / `__Secure-`   |
-| `static`      | Web App      | Exposed dotfiles, directory listing, robots.txt        |
+| `static`      | Web App      | Exposed dotfiles, directory listing, robots.txt       |
 | `api`         | API          | CORS, CSRF, verb tampering, 401/403 response quality  |
 | `email_dns`   | DNS / Email  | SPF, DKIM, DMARC presence and policy strictness       |
 | `javascript`  | Advanced     | Inline event handlers, `eval`, source-map exposure    |
@@ -387,7 +387,7 @@ secaudit compare baseline.json current.json
 ```
 
 ```
-┏━ [ DIFF ] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┏━ [ DIFF ] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃   score   //  72 → 81  (+9)                                       ┃
 ┃   grade   //  C+ → B                                              ┃
 ┃   changes //  [!] 4 changed   [+] 2 added   [-] 1 removed         ┃
